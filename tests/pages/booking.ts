@@ -5,11 +5,13 @@ export class BookingPage {
   constructor(private page: Page) {}
 
   async bookRoom() {
-  await this.page.locator("input[value='13/06/2026']");
-  await this.page.locator("input[value='14/06/2026']");
-  await this.page.getByRole("button", {name: 'Check Availability'}).click();
-
-  // Selecting Room
+  const CheckIn = await this.page.getByRole('textbox').first();
+  await CheckIn.click();
+  await CheckIn.fill('15/06/2026');
+  const CheckOut = await this.page.getByRole('textbox').nth(1);
+  await CheckOut.click();
+  await CheckOut.fill('16/06/2026');
+  await this.page.getByRole("button", {name: 'Check Availability'}).click();  // Selecting Room
   await this.page.locator(".card.h-100.shadow-sm.room-card").first().getByRole('link', { name: 'Book now' }).click();
   await this.page.locator('h2:has-text("Book This Room")').first().waitFor();
   await this.page.locator("#doReservation").click();
