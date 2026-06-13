@@ -15,6 +15,15 @@ The framework automates a complete customer booking journey on the application u
 
 ---
 
+## Time Spent
+
+### Activity	                         - Time
+- Application Exploration	            - 45 mins
+- Framework Setup                     - 1 hour
+- Automation Development              - 2 hours
+
+---
+
 ## Tech Stack
 
 - Playwright
@@ -25,18 +34,24 @@ The framework automates a complete customer booking journey on the application u
 
 ## Framework Design
 
-This automation solution is implemented using Playwright with TypeScript.
+The framework follows the Page Object Model (POM) design pattern for maintainability and scalability.
 
-For the scope of this assignment, a straightforward test structure was used to focus on automating a complete end-to-end customer booking journey and validating critical business functionality.
+### Structure
 
-Key design considerations:
+pages/
+- Contains page objects.
 
-Playwright Test Runner for test execution and reporting.
-TypeScript for improved readability and type safety.
-End-to-end test coverage of the booking workflow.
-Assertions added throughout the journey to validate UI behavior and booking outcomes.
-Reusable constants and test data separated where appropriate.
-HTML reports generated through Playwright for test execution results.
+tests/
+- Contains test specifications.
+
+### Key design considerations:
+
+- Playwright Test Runner for test execution and reporting.
+- TypeScript for improved readability and type safety.
+- End-to-end test coverage of the booking workflow.
+- Assertions added throughout the journey to validate UI behavior and booking outcomes.
+- Reusable constants and test data separated where appropriate.
+- HTML reports generated through Playwright for test execution results.
 
 ---
 
@@ -133,7 +148,6 @@ A failure in any of these steps could prevent customers from completing a bookin
 
 ## Assumptions
 - Test environment contains at least one available room.
-- Booking data can be reused.
 - Environment remains stable during execution.
 
 ---
@@ -150,29 +164,18 @@ A failure in any of these steps could prevent customers from completing a bookin
 ### Home Page
 
 - Page title validation
-- Room cards visibility
 
 ### Room Details Page
 
-- Room information displayed
-- Price displayed
+- Room cards visibility
 
 ### Booking Form
 
-- Name field validation
-- Email field validation
-- Booking date validation
-
-### Price Summary
-
-- Total price displayed
-- Price greater than zero
-- Price matches expected booking value
+- Price and fee is displayed
 
 ### Confirmation Page
 
 - Booking success message displayed
-- Confirmation details visible
 
 ---
 
@@ -183,6 +186,29 @@ Playwright HTML reports are generated automatically after execution.
 Location:
 
 playwright-report/index.html
+
+---
+
+## AI Usage Disclosure
+AI Tool Used:
+ChatGPT
+
+Usage:
+- Brainstorming framework structure
+- README drafting assistance
+- Sample TypeScript code suggestions
+
+AI-Assisted Components:
+- Initial Page Object skeletons
+- Documentation templates
+
+Human Work:
+- Application exploration
+- Test design
+- Risk analysis
+- Locator identification
+- Framework implementation
+- Final validation and debugging
 
 ---
 
